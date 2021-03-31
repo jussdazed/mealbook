@@ -1,25 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import Header from "./layout/Header";
+import Footer from "./layout/Footer";
+import {Route, Switch} from "react-router-dom";
+import MealDetails from "./components/MealDetails";
+import MealsList from "./components/Category/MealsList";
+import Categories from "./components/CategoriesPage/Categories";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    return (
+        <div className='flex flex-col h-screen'>
+            <Header/>
+            <Switch>
+                <Route exact path='/' component={Categories}/>
+                <Route path='/category/:name' component={MealsList}/>
+                <Route path='/meal/:id' component={MealDetails}/>
+            </Switch>
+            <Footer/>
+        </div>
+    );
+};
 
 export default App;
