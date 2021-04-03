@@ -1,13 +1,27 @@
-import React from 'react';
+import React, {useState} from 'react';
+import {getCategoryByName} from "../api";
 
 const Search = () => {
+
+    const [search, setSearch] = useState([])
+    const [searchResult, setSearchResult] = useState([])
+
+    const handlerChange = (event) => {
+        setSearch(() => event.target.value)}
+
+    const handleKey = (event) => {
+        if (event.key === 'Enter') {
+            getCategoryByName(search).then(r => setSearchResult(r.meals))}}
 
     return (
         <div>
             <div className="relative text-gray-600">
                 <input type="search" name="serch" placeholder="Search"
-                       className="bg-white h-10 px-5 pr-10 rounded-full text-sm focus:outline-none"/>
-                <button type="submit" className="absolute right-0 top-0 mt-3 mr-4">
+                       className="bg-white h-10 px-5 pr-10 rounded-full text-sm focus:outline-none"
+                       value={search}
+                       onChange={handlerChange}
+                       onKeyDown={handleKey}/>
+                <button type="submit" className="absolute right-0 top-0 mt-3 mr-4" onClick={()=>{getCategoryByName().then(r => setSearchResult(r.meals))}}>
                     <svg className="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg"
                          xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
                          viewBox="0 0 56.966 56.966"

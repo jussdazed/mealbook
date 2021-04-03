@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {getCategories} from "../../api";
-import Preloader from "../Preloader";
+import Preloader from "../../components/Preloader";
 import CategoryItem from "./CategoryItem";
 
 
@@ -17,6 +17,7 @@ const Categories = () => {
     }, [])
 
     return (
+
         <div className='flex-grow bg-gray-200'>
             <h1 className='font-bold text-center pt-5 text-3xl'>Categories</h1>
             <div className='max-w-screen-xl grid grid-cols-auto-fit mx-auto gap-2 py-7'>

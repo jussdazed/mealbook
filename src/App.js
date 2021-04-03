@@ -1,10 +1,11 @@
 import './App.css';
-import Header from "./layout/Header";
-import Footer from "./layout/Footer";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 import {Route, Switch} from "react-router-dom";
-import MealDetails from "./components/MealDetails";
-import MealsList from "./components/Category/MealsList";
-import Categories from "./components/CategoriesPage/Categories";
+import MealDetails from "./page/MealDetails";
+import MealsList from "./page/Category/MealsList";
+import Categories from "./page/CategoriesPage/Categories";
+import SearchResult from "./page/SearchResult";
 
 function App() {
     return (
@@ -14,6 +15,7 @@ function App() {
                 <Route exact path='/' component={Categories}/>
                 <Route path='/category/:name' component={MealsList}/>
                 <Route path='/meal/:id' component={MealDetails}/>
+                <Route path='/search/:name' component={SearchResult}/>
             </Switch>
             <Footer/>
         </div>
