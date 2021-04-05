@@ -1,17 +1,19 @@
 import React, {useState} from 'react';
-import {getCategoryByName} from "../api";
+import {useHistory} from 'react-router-dom'
 
 const Search = () => {
 
     const [search, setSearch] = useState([])
-    const [searchResult, setSearchResult] = useState([])
+
+    const history = useHistory()
 
     const handlerChange = (event) => {
         setSearch(() => event.target.value)}
 
     const handleKey = (event) => {
         if (event.key === 'Enter') {
-            getCategoryByName(search).then(r => setSearchResult(r.meals))}}
+            history.push(`/search/${search}`)
+        }}
 
     return (
         <div>
@@ -21,7 +23,7 @@ const Search = () => {
                        value={search}
                        onChange={handlerChange}
                        onKeyDown={handleKey}/>
-                <button type="submit" className="absolute right-0 top-0 mt-3 mr-4" onClick={()=>{getCategoryByName().then(r => setSearchResult(r.meals))}}>
+                <button type="submit" className="absolute right-0 top-0 mt-3 mr-4" onClick={() => history.push(`/search/${search}`)}>
                     <svg className="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg"
                          xmlnsXlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
                          viewBox="0 0 56.966 56.966"

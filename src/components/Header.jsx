@@ -5,7 +5,7 @@ import Search from "./Search";
 
 const Header = () => {
     return (
-        <div className='container bg-red-400'>
+        <div className='bg-red-400'>
             <div className='flex flex-wrap justify-around py-5'>
                 <Link to='/'>
                     <h1 className='text-3xl font-bold'>Meals book</h1>

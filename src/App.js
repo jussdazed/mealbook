@@ -5,7 +5,7 @@ import {Route, Switch} from "react-router-dom";
 import MealDetails from "./page/MealDetails";
 import MealsList from "./page/Category/MealsList";
 import Categories from "./page/CategoriesPage/Categories";
-import SearchResult from "./page/SearchResult";
+import SearchResult from "./page/Search/SearchResult";
 
 function App() {
     return (
@@ -20,6 +20,6 @@ function App() {
             <Footer/>
         </div>
     );
-};
+}
 
 export default App;
