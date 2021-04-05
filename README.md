@@ -1,3 +1,3 @@
-React, Tailwind css, omdb api
+React, Tailwind css, themealdb api
 
 https://jussdazed.github.io/mealbook/
