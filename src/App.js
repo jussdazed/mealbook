@@ -12,7 +12,7 @@ function App() {
         <div className='flex flex-col h-screen'>
             <Header/>
             <Switch>
-                <Route exact path='/' component={Categories}/>
+                <Route exact path='/mealbook/' component={Categories}/>
                 <Route path='/category/:name' component={MealsList}/>
                 <Route path='/meal/:id' component={MealDetails}/>
                 <Route path='/search/:name' component={SearchResult}/>
