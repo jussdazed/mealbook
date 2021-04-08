@@ -4,6 +4,7 @@ import Search from "./Search";
 
 
 const Header = () => {
+
     return (
         <div className='bg-red-400'>
             <div className='flex flex-wrap justify-around py-5'>
