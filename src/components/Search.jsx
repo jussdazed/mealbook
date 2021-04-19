@@ -18,7 +18,7 @@ const Search = () => {
     return (
         <div>
             <div className="relative text-gray-600">
-                <input type="search" name="serch" placeholder="Search"
+                <input type="search" name="search" placeholder="Search"
                        className="bg-white h-10 px-5 pr-10 rounded-full text-sm focus:outline-none"
                        value={search}
                        onChange={handlerChange}

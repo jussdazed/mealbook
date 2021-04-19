@@ -19,7 +19,7 @@ const MealDetails = () => {
         <>
             <div className="flex flex-grow bg-gray-200 flex items-center p-5 lg:p-10">
                 {meal.idMeal ?
-                    <div className='flex flex-col justify-center'>
+                    <div className='flex flex-col justify-center mx-auto'>
                         <div
                             className="w-full max-w-6xl rounded bg-white shadow-xl box-border p-10 mx-auto text-gray-800 relative md:text-left my-4">
                             <div className="md:flex items-center">
@@ -41,14 +41,14 @@ const MealDetails = () => {
                             <div>
                                 <h2 className='text-xl p-5'>Video recipe:</h2>
                                 <iframe src={`https://www.youtube.com/embed/${meal.strYoutube.slice(-11)}`} width="400"
-                                        height="250" frameborder="0"></iframe>
+                                        height="250"></iframe>
 
                             </div>
                         </div>
                         <button
                             className="box-border px-10 py-3 text-xs font-medium leading-6 text-center text-white uppercase transition bg-green-500 rounded shadow ripple hover:shadow-lg hover:bg-green-600"
                             onClick={goBack}>
-                            Get back
+                            Gо back
                         </button>
                     </div>
 
